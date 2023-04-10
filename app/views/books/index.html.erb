@@ -1,14 +1,13 @@
 <h1>Books</h1>
-<p><strong>Title</strong></p>
-<p><strong>Body</strong></p>
-<% @indexes.each do |book| %>
-  <div class="index">
-  <span><%= book.title %></span>
+<div class="index">
+  <p><strong>Title</strong></p>
+  <p><strong>Body</strong></p>
+  <% @indexes.each do |book| %>
+    <span><%= book.title %></span>
 
-  <span><%= book.body %></span>
-  </div>
-<% end %>
-
+    <span><%= book.body %></span>
+  <% end %>
+</div>
 <h2>New book</h2>
 <%= form_with model: @books,url: '/books',method: :post do |f| %>
   <h4>Title</h4>
