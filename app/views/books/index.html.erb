@@ -1,10 +1,12 @@
 <h1>Books</h1>
+<p><strong>Title</strong></p>
+<p><strong>Body</strong></p>
 <% @indexes.each do |book| %>
-  <p>Title</p>
+  <div class="index">
   <span><%= book.title %></span>
 
-  <p>Body</p>
   <span><%= book.body %></span>
+  </div>
 <% end %>
 
 <h2>New book</h2>
