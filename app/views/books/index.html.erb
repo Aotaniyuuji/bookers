@@ -6,7 +6,11 @@
     <span><%= book.title %></span>
 
     <span><%= book.body %></span>
+    <%= link_to "Show",book_path(book.id),method: :get %>
+    <%= link_to "Edit",edit_book_path(book.id),method: :get %>
+    <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
   <% end %>
+
 </div>
 <h2>New book</h2>
 <%= form_with model: @books,url: '/books',method: :post do |f| %>

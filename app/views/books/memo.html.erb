@@ -8,13 +8,4 @@
   <span><%= book.body %></span>
 <% end %>
 
-<h2>New book</h2>
-<%= form_with model: @books,url: '/books',method: :post do |f| %>
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-
-  <h4>Body</h4>
-  <%= f.text_area :body %>
-
-  <%= f.submit 'Create Book' %>
-<% end %>
+<%= link_to "Destroy", destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
