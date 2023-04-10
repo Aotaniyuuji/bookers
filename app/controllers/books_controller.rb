@@ -5,11 +5,13 @@ class BooksController < ApplicationController
   end
 
   def create
-    book = Book.new(book_params)
+    @book = Book.new(book_params)
 
-    book.save
-
-    redirect_to '/books'
+    if @book.save
+      redirect_to book_path(@book.id)
+    else
+      render :index
+    end
   end
 
   def show

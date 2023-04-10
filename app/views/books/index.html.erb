@@ -10,9 +10,18 @@
     <%= link_to "Edit",edit_book_path(book.id),method: :get %>
     <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
   <% end %>
-
 </div>
+
 <h2>New book</h2>
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: @books,url: '/books',method: :post do |f| %>
   <h4>Title</h4>
   <%= f.text_field :title %>
