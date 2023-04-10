@@ -1,4 +1,6 @@
 
-<p>Title <%= @book.title %></p>
+<p>Title: <%= @book.title %></p>
 
-<p>Body <%= @book.body %></p>
+<p>Body: <%= @book.body %></p>
+
+<%= link_to "Edit",edit_list_path(@book.id) 
