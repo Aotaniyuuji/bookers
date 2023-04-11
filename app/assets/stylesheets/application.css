@@ -20,3 +20,11 @@
   box-sizing:border-box;
 }
 
+body {
+  font-family:verdana, arial, helvetica, sans-serif;
+  margin:33px;
+}
+
+p,ul {
+  margin:33px;
+}
