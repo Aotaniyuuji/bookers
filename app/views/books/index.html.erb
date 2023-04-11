@@ -1,17 +1,21 @@
 <h1>Books</h1>
 <table>
   <thead>
-    <tr><strong>Title</strong></tr>
-    <tr><strong>Body</strong></tr>
+    <tr>
+      <th><strong>Title</strong></th>
+      <th><strong>Body</strong></th>
+    </tr>
   </thead>
   <tbody>
     <% @indexes.each do |book| %>
-      <tr><span><%= book.title %></span></tr>
+      <tr>
+        <td><span><%= book.title %></span></td>
 
-      <tr><span><%= book.body %></span></tr>
-      <tr><%= link_to "Show",book_path(book.id),method: :get %></tr>
-      <tr><%= link_to "Edit",edit_book_path(book.id),method: :get %></tr>
-      <tr><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></tr>
+        <td><span><%= book.body %></span></td>
+        <td><%= link_to "Show",book_path(book.id),method: :get %></td>
+        <td><%= link_to "Edit",edit_book_path(book.id),method: :get %></td>
+        <td><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+      </tr>
     <% end %>
   </tbody>
 </table>
