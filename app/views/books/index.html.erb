@@ -1,5 +1,5 @@
 <h1>Books</h1>
-<div class="index">
+<table>
   <p><strong>Title</strong></p>
   <p><strong>Body</strong></p>
   <% @indexes.each do |book| %>
@@ -10,8 +10,8 @@
     <%= link_to "Edit",edit_book_path(book.id),method: :get %>
     <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
   <% end %>
-  
-</div>
+</table>
+
 <h2>New book</h2>
 <% if @books.errors.any? %>
   <%= @books.errors.count %>件のエラーが発生しました
