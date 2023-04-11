@@ -1,15 +1,19 @@
 <h1>Books</h1>
 <table>
-  <p><strong>Title</strong></p>
-  <p><strong>Body</strong></p>
-  <% @indexes.each do |book| %>
-    <span><%= book.title %></span>
+  <thead>
+    <tr><strong>Title</strong></tr>
+    <tr><strong>Body</strong></tr>
+  </thead>
+  <tbody>
+    <% @indexes.each do |book| %>
+      <span><%= book.title %></span>
 
-    <span><%= book.body %></span>
-    <%= link_to "Show",book_path(book.id),method: :get %>
-    <%= link_to "Edit",edit_book_path(book.id),method: :get %>
-    <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-  <% end %>
+      <span><%= book.body %></span>
+      <%= link_to "Show",book_path(book.id),method: :get %>
+      <%= link_to "Edit",edit_book_path(book.id),method: :get %>
+      <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+    <% end %>
+  </tbody>
 </table>
 
 <h2>New book</h2>
@@ -23,11 +27,15 @@
   <% end %>
 
 <%= form_with model: @books,url: '/books',method: :post do |f| %>
-  <h4>Title</h4>
-  <%= f.text_field :title %>
-
-  <h4>Body</h4>
-  <%= f.text_area :body %>
-
-  <%= f.submit 'Create Book' %>
+  <div class="field">
+    <h4>Title</h4>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <h4>Body</h4>
+    <%= f.text_area :body %>
+  </div>
+  <div class="button">
+    <%= f.submit 'Create Book' %>
+  </div>
 <% end %>
