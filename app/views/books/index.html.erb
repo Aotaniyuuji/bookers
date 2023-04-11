@@ -6,12 +6,12 @@
   </thead>
   <tbody>
     <% @indexes.each do |book| %>
-      <span><%= book.title %></span>
+      <tr><span><%= book.title %></span></tr>
 
-      <span><%= book.body %></span>
-      <%= link_to "Show",book_path(book.id),method: :get %>
-      <%= link_to "Edit",edit_book_path(book.id),method: :get %>
-      <%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+      <tr><span><%= book.body %></span></tr>
+      <tr><%= link_to "Show",book_path(book.id),method: :get %></tr>
+      <tr><%= link_to "Edit",edit_book_path(book.id),method: :get %></tr>
+      <tr><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></tr>
     <% end %>
   </tbody>
 </table>
