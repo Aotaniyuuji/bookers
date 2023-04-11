@@ -30,6 +30,23 @@ body {
 
 }
 
-p,ul {
+table {
+  display: table;
+  border-collapse: separate;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: gray;
+}
+
+p,td, .flash-m {
+  font-size:13px;
   margin:33px;
+}
+
+a:visited {
+  color: #666;
+}
+
+a {
+  color:#000;
 }

@@ -13,14 +13,6 @@ h1 {
   margin: 20px 0;
 }
 
-table {
-  display: table;
-  border-collapse: separate;
-  text-indent: initial;
-  border-spacing: 2px;
-  border-color: gray;
-}
-
 h2 {
   margin: 10px 0;
 }
@@ -31,4 +23,21 @@ h2 {
 
 label {
   display: block;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+}
+
+th {
+  padding-bottom: 5px;
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+}
+
+.flash-m {
+  color: green;
+  
 }
