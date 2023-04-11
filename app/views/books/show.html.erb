@@ -3,9 +3,9 @@
     <%= flash[:successful] %>
 </div>
 
-<p><strong>Title:</strong> <%= @book.title %></p>
+<label><strong>Title:</strong> <%= @book.title %></label>
 
-<p><strong>Body:</strong> <%= @book.body %></p>
+<label><strong>Body:</strong> <%= @book.body %></label>
 
 <%= link_to "Edit",edit_book_path(@book.id) %>
 <span><%= "|" %></span>
